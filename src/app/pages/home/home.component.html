@@ -1,0 +1,13 @@
+<app-header [ShowCourses]="ShowCourses" [ShowHome]="ShowHome"></app-header>
+
+<div [ngSwitch]="page">
+  <div *ngSwitchCase="'home'" class="container">
+  </div>
+
+  <div *ngSwitchCase="'courses'" class="container">
+    <app-course-card *ngFor="let course of courses" [course]="course" appOnHover></app-course-card>
+  </div>
+  <div *ngSwitchDefault class="container">
+    default switch
+  </div>
+</div>

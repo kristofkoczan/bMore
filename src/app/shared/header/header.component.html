@@ -1,0 +1,15 @@
+<mat-toolbar color="secondary" *ngIf="ShowHome && ShowCourses">
+    <mat-toolbar-row class="container">
+
+        <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon>Menu</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item disabled><mat-icon>person</mat-icon>Profil</button>
+            <button mat-menu-item disabled><mat-icon>settings</mat-icon>Setting</button>
+            <button mat-menu-item disabled><mat-icon>logout</mat-icon>LogOut</button>      
+        </mat-menu>
+
+        <button mat-button (click)="ShowHome()"><mat-icon>home</mat-icon>Home</button>
+        <button mat-button disabled><mat-icon>person</mat-icon>About Me</button>
+        <button mat-button (click)="ShowCourses()"><mat-icon>book</mat-icon>Courses</button>
+    </mat-toolbar-row>
+</mat-toolbar>
