@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
-import { HeaderModule } from '../../shared/header/header.module';
+import { HeaderModule } from '../header/header.module';
 import { CoursesModule } from './../courses/courses.module';
 import { CourseCardModule } from '../courses/card/course-card.module';
-import { OnHoverModule } from '../../shared/directives/on-hover/on-hover.module'
+import { OnHoverModule } from '../../shared/directives/on-hover/on-hover.module';
 
 @NgModule({
   declarations: [ HomeComponent ],
@@ -13,7 +13,7 @@ import { OnHoverModule } from '../../shared/directives/on-hover/on-hover.module'
     HeaderModule,
     CoursesModule,
     CourseCardModule,
-    OnHoverModule
+    OnHoverModule,
     ],
   exports: [HomeComponent]
 })

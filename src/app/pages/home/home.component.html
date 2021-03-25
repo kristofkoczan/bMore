@@ -1,13 +1,20 @@
-<app-header [ShowCourses]="ShowCourses" [ShowHome]="ShowHome"></app-header>
+<app-header [selectedCategory]="category" [categories]="categories" (callSelectC)="onSelect($event)"
+(callSelectPage)="page = $event"></app-header>
 
-<div [ngSwitch]="page">
-  <div *ngSwitchCase="'home'" class="container">
-  </div>
+<div [ngSwitch]="category">
+    <div *ngSwitchCase="'home'" class="container">
+    </div>
 
-  <div *ngSwitchCase="'courses'" class="container">
-    <app-course-card *ngFor="let course of courses" [course]="course" appOnHover></app-course-card>
-  </div>
-  <div *ngSwitchDefault class="container">
-    default switch
-  </div>
+    <div *ngSwitchCase="'courses'" class="container" >
+         <app-course-card *ngFor="let course of courses" [course]="course"  appOnHover></app-course-card>
+    </div>
+
+    
+    <div *ngSwitchCase="'about'" class="container" >
+      Hi, Im kristóf
+    </div>
+    
+    <div *ngSwitchDefault class="container">
+      default switch
+    </div>
 </div>

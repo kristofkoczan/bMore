@@ -3,9 +3,12 @@
             <mat-card-title>{{course.title}}</mat-card-title>
             <mat-card-subtitle>{{course.id}}</mat-card-subtitle>
         </mat-card-header>
-        <mat-card-content>
+        <img mat-card-image *ngIf="course.img; else elseBlock" [src]="course.img" alt={{course.title}}>
+        <ng-template #elseBlock><img mat-card-image src="../../../../assets/images/default.png" alt={{course.title}}></ng-template>
+        
+        <!--<mat-card-content>
             {{course.description}}
-        </mat-card-content>
+        </mat-card-content>-->
     </mat-card>
 
 

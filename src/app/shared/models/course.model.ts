@@ -3,5 +3,6 @@ export interface Course {
     title: string,
     description: string,
     lessonNumber: number,
-    available?: boolean, 
+    available?: boolean,
+    img?: string, 
   }

@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { COURSES } from '../../shared/database/course.database';
-
+import { CATEGORIES } from './../../shared/database/category.database';
 
 @Component({
   selector: 'app-home',
@@ -8,26 +8,29 @@ import { COURSES } from '../../shared/database/course.database';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  page?= '';
-  filter='';
-  
+  categories = CATEGORIES;
+
   courses = COURSES;
+  category?= '';
+  page = 'home';
+
 
   constructor() { }
 
   ngOnInit(): void {
-    this.page = 'home';
-  }
-
-  ShowCourses = (): void => {
-    this.page = 'courses';
-  }
-  ShowHome = (): void => {
-    this.page = 'home';
+    this.category = '';
   }
 
   ngOnDestroy(): void {
-    delete this.page;
+    delete this.category;
   }
+
+  onSelect(event: string): void {
+    this.category = event;
+  }
+
+
+
+
 
 }

@@ -7,6 +7,7 @@ export const COURSES: Course[] = [
       description: 'A basic course to learn about coffee.',
       lessonNumber: 6,
       available: true,
+      img: '../../../../assets/images/coffeePattern.png',
     },
     {
       id: 'PH010GR4PH',
@@ -28,5 +29,6 @@ export const COURSES: Course[] = [
       description: 'A master course to learn about coffee.',
       lessonNumber: 0,
       available: false,
+      img: '../../../../assets/images/coffeePattern.png',
     },
   ];
