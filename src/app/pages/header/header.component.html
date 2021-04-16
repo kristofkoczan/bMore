@@ -1,16 +1,18 @@
 <mat-toolbar color="secondary">
     <mat-toolbar-row class="container">
 
-        <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon>Menu</button>
+        <button mat-button [matMenuTriggerFor]="menu"  class="headerBtn">Menu<mat-icon>menu</mat-icon></button>
         <mat-menu #menu="matMenu">
             <button mat-menu-item disabled><mat-icon>person</mat-icon>Profil</button>
             <button mat-menu-item disabled><mat-icon>settings</mat-icon>Setting</button>
-            <button mat-menu-item disabled><mat-icon>logout</mat-icon>LogOut</button>      
+            <button mat-menu-item (click)="callSelectPage.emit('')" ><mat-icon>logout</mat-icon>LogOut</button>      
         </mat-menu>
 
-        <button mat-button *ngFor="let item of categories" (click)="select(item.value)" disabled={{item.disabled}}>
+        <button mat-button *ngFor="let item of categories" (click)="select(item.value)" disabled={{item.disabled}} class="headerBtn">
             {{item.title}}&nbsp;
             <mat-icon>{{item.icon}}</mat-icon>
           </button>
     </mat-toolbar-row>
+    
+
 </mat-toolbar>

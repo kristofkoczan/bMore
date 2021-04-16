@@ -1,20 +1,50 @@
-<app-header [selectedCategory]="category" [categories]="categories" (callSelectC)="onSelect($event)"
-(callSelectPage)="page = $event"></app-header>
+<div [ngSwitch]="page">
+  <div *ngSwitchCase="'home'" [ngSwitch]="category">
+                              <div *ngSwitchCase="'home'" >
+                                <app-header [categories]="categories" (callSelectC)="onSelect($event)" (callSelectPage)="page = $event"></app-header>
+                                <div class="container">
+                                    <app-home-card  *ngFor="let item of categories"
+                                                      [item] ="item" 
+                                                      [selectedCategory]="category" 
+                                                      [categories]="categories" 
+                                                      (callSelectC)="onSelect($event)"
+                                                      (callSelectPage)="page = $event"
+                                                      >
+                                    </app-home-card>
+                                </div>
+                            </div>
 
-<div [ngSwitch]="category">
-    <div *ngSwitchCase="'home'" class="container">
-    </div>
+                            <div *ngSwitchCase="'courses'" >
+                                  <app-header [selectedCategory]="category" [categories]="categories" (callSelectC)="onSelect($event)"
+                                              (callSelectPage)="page = $event"></app-header>
+                                  <div class="container">
+                                    <app-course-card *ngFor="let course of courses" [course]="course" appOnHover ></app-course-card>
+                                  </div>
+                            </div>
 
-    <div *ngSwitchCase="'courses'" class="container" >
-         <app-course-card *ngFor="let course of courses" [course]="course"  appOnHover></app-course-card>
-    </div>
+                            
+                            <div *ngSwitchCase="'about'">
+                              <app-header [selectedCategory]="category" [categories]="categories" (callSelectC)="onSelect($event)"
+                                          (callSelectPage)="page = $event"></app-header>
+                              <div class="container">
+                                <app-about-me appOnHover></app-about-me>
+                              </div>
+                            </div>
 
+                            <div *ngSwitchCase="'photography'">
+                              <app-header [selectedCategory]="category" [categories]="categories" (callSelectC)="onSelect($event)"
+                                          (callSelectPage)="page = $event"></app-header>
+                                <div class="chips">
+                                  <app-photography-chips></app-photography-chips>
+                                </div>
+                                
+                                <div class="container">
+                                  <app-photography-card *ngFor="let picture of pictures.reverse()" [picture]="picture" ></app-photography-card>
+                                </div>
+                            </div>
+  </div>
     
-    <div *ngSwitchCase="'about'" class="container" >
-      Hi, Im kristóf
-    </div>
-    
-    <div *ngSwitchDefault class="container">
-      default switch
-    </div>
+    <span *ngSwitchDefault>
+                              <app-login (callSelectPage)="page = $event"></app-login>
+    </span>
 </div>

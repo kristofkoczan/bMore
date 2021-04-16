@@ -1,0 +1,10 @@
+    <mat-card *ngIf="picture && picture.available" class="zoom2">
+        <mat-card-header>
+            <img mat-card-avatar src="../../../assets/images/kristofProfile.jpg" alt="just me" >
+            <mat-card-title>{{picture.name}}</mat-card-title>
+            <mat-card-subtitle>{{picture.id}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="picture.link" alt={{picture.name}} class="cardImg">
+    </mat-card><br><br>
+
+

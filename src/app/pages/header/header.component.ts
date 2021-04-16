@@ -33,8 +33,8 @@ export class HeaderComponent implements OnInit {
   setTitle(): void {
     const category =
       this.categories.filter((item) => item.value === this.selectedCategory);
-    this.sCategoryTitle =
-      category?.[0] ? category[0].title : '';
+      this.sCategoryTitle =
+      category?.[0] ? category[0].title : 'Home';
   }
 
 }

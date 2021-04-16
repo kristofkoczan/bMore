@@ -1,0 +1,15 @@
+<div class="centering">
+    <mat-card id="log-card" >
+      <form>
+        <h3>Bejelentkezés</h3>
+        
+        <app-login-form></app-login-form>
+
+        <button mat-raised-button color="accent"
+          (click)="callSelectPage.emit('home')">BEJELENTKEZÉS</button>
+        <br>
+        
+      </form>
+    </mat-card>
+  </div>
+  

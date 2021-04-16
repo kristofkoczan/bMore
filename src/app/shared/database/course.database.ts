@@ -15,6 +15,7 @@ export const COURSES: Course[] = [
       description: 'A basic course to learn about photography.',
       lessonNumber: 0,
       available: false,
+      img: '../../../../assets/images/cameraPattern.png',
     },
     {
       id: 'TH1NK',

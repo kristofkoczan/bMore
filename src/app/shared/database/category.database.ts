@@ -29,6 +29,6 @@ export const CATEGORIES: Category[] = [
         title: 'Photography',
         icon: 'camera',
         value: 'photography',
-        disabled: true,
+        disabled: false,
     },
 ];

@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { COURSES } from '../../shared/database/course.database';
 import { CATEGORIES } from './../../shared/database/category.database';
+import { PICTURES } from './../../shared/database/picture.database';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   categories = CATEGORIES;
 
   courses = COURSES;
+  pictures = PICTURES;
   category?= '';
   page = 'home';
 
@@ -18,7 +20,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor() { }
 
   ngOnInit(): void {
-    this.category = '';
+    this.category = 'home';
   }
 
   ngOnDestroy(): void {
